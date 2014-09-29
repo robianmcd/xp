@@ -1,0 +1,26 @@
+ul.experience-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+i.panel-icon {
+    padding-right: 6px;
+}
+
+div.rob {
+    background-image: url(img/Rob.png);
+
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.top-panel {
+    height: 250px;
+}
