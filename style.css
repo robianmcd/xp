@@ -22,5 +22,5 @@ div.rob {
 }
 
 .top-panel {
-    height: 250px;
+    min-height: 250px;
 }
