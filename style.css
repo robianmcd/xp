@@ -24,3 +24,21 @@ div.rob {
 .top-panel {
     min-height: 250px;
 }
+
+.experience-list-item {
+
+}
+
+.experience-panel {
+    margin-bottom: 25px;
+}
+
+.experience-carousel {
+    height: 235px;
+    margin-bottom: 25px;
+}
+
+.experience-image {
+    max-height: 235px;
+    margin: auto;
+}
