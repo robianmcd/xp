@@ -18,7 +18,7 @@ var config = {
                 },
                 {
                     type: 'img',
-                    url: 'img/speakers.png'
+                    url: 'img/Speakers.png'
                 }
             ]
         }
