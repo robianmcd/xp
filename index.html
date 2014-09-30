@@ -9,6 +9,7 @@
     <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.2.min.js"></script>
     <script src="config.js"></script>
     <script src="app.js"></script>
+    <script src="services/anchorSmoothScrollService.js"></script>
 
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -16,157 +17,174 @@
 </head>
 <body>
 <div class="container">
-    <h1 style="font-size: 70pt; margin-bottom: 0;" class="text-center">Rob McDiarmid</h1>
 
-    <h1 style="margin-top:0;" class="text-center">Software Developer</h1>
+    <div class="intro">
 
+        <h1 style="font-size: 60pt; margin-bottom: 0;" class="text-center">Rob McDiarmid</h1>
 
-    <div class="row">
-        <div style="margin-top:45px;"></div>
-    </div>
-    <div style="margin-bottom:45px" class="row">
-        <div class="col-md-4">
-            <div class="panel panel-primary top-panel">
-                <div class="panel-heading"><i class="fa fa-child panel-icon"></i>Bio</div>
-                <div class="panel-body">
-                    Rob McDiarmid is a software developer with a love for all things Angular. He is an active member of
-                    the JavaScript community and takes every chance he gets to speak at and participate in developer
-                    events around Toronto. By day, Rob works for OTPP as a full-stack developer on an Angular/Java app.
-                    By night, he is the lead developer on sonder.io's MEAN stack site.
+        <h1 style="margin-top:0;" class="text-center">Software Developer</h1>
+
+        <div class="row">
+
+            <div class="text-center col-md-4 col-md-push-4 intro-col">
+                <div class="rob"></div>
+                <div>
+                    <a href="mailto:robianmcd@gmail.com">robianmcd@gmail.com</a>
+                </div>
+                <div>
+                    <a href="tel:6477824482">647-782-4482</a>
+
+                </div>
+                <div>
+                    <a href="http://stackoverflow.com/users/373655/rob" class="fa fa-stack-overflow fa-lg"></a>
+                    <a href="https://github.com/robianmcd" class="fa fa-github fa-lg"></a>
+                    <a href="https://twitter.com/RobIanMcd" class="fa fa-twitter fa-lg"></a>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-md-pull-4 intro-col">
+                <div class="panel panel-primary intro-panel">
+                    <div class="panel-heading"><i class="fa fa-child panel-icon"></i>Bio</div>
+                    <div class="panel-body">
+                        Rob McDiarmid is a software developer with a love for all things Angular. He is an active member
+                        of
+                        the JavaScript community and takes every chance he gets to speak at and participate in developer
+                        events around Toronto. By day, Rob works for OTPP as a full-stack developer on an Angular/Java
+                        app.
+                        By night, he is the lead developer on sonder.io's MEAN stack site.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 intro-col">
+                <div class="panel panel-primary intro-panel">
+                    <div class="panel-heading"><i class="fa fa-graduation-cap panel-icon"></i>Education</div>
+                    <div class="panel-body">
+                        <ul>
+                            <li>Completed the computer science specialist program</li>
+                            <li>Took part in the Undergraduate Capstone Open Source Projects program</li>
+                            <li>Vice president of the U of T HFOSS club</li>
+                            <li>Participated in the PEY co-op program</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="text-center col-md-4">
-            <div class="rob"></div>
-            <div>
-                <a href="mailto:robianmcd@gmail.com">robianmcd@gmail.com</a>
-            </div>
-            <div>
-                <a href="tel:6477824482">647-782-4482</a>
 
-            </div>
-            <div>
-                <a href="http://stackoverflow.com/users/373655/rob" class="fa fa-stack-overflow"></a>
-                <a href="https://github.com/robianmcd" class="fa fa-github"></a>
-                <a href="https://twitter.com/RobIanMcd" class="fa fa-twitter"></a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-primary top-panel">
-                <div class="panel-heading"><i class="fa fa-graduation-cap panel-icon"></i>Education</div>
-                <div class="panel-body">
-                    <ul>
-                        <li>Completed the computer science specialist program</li>
-                        <li>Took part in the Undergraduate Capstone Open Source Projects program</li>
-                        <li>Vice president of the U of T HFOSS club</li>
-                        <li>Participated in the PEY co-op program</li>
-                    </ul>
+    </div>
+
+    <div class="text-center visible-lg visible-md">
+        <a ng-click="ctrl.scrollToId('experiences')" style="position:relative; top:-70px;" href="" class="btn btn-primary btn-lg">
+            <i class="fa fa-chevron-down fa-2x"></i>
+        </a>
+    </div>
+
+    <div id="experiences">
+        <h1 style="padding-bottom:30px;padding-top:60px; font-size:40pt" class="text-center">Experiences</h1>
+
+        <div style="padding-bottom:30px;" class="row">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                    <input type="text" class="form-control" placeholder="">
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" class="form-control" placeholder="">
+        <div class="row">
+            <div class="col-md-12">
+
+                <ul class="experience-list">
+                    <li ng-repeat="experience in ctrl.config.experiences" class="experience-list-item">
+                        <div class="col-md-7">
+
+                            <div class="panel panel-info experience-panel">
+                                <div class="panel-heading"><i class="fa fa-briefcase panel-icon"></i>OTPP</div>
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, tenetur?</li>
+                                        <li>Ad asperiores ea in ipsam laboriosam necessitatibus nesciunt, omnis tenetur!
+                                        </li>
+                                        <li>Architecto aut dolorum explicabo id itaque odio sed suscipit, vel.</li>
+                                        <li>Adipisci fugit necessitatibus neque provident quis, repellat. Alias, esse,
+                                            fuga!
+                                        </li>
+                                        <li>A ab blanditiis dolores doloribus labore minus reiciendis totam veniam!</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-5">
+                            <carousel class="experience-carousel">
+                                <slide ng-repeat="image in experience.media">
+                                    <img class="experience-image" ng-src="{{image.url}}"/>
+                                </slide>
+                            </carousel>
+                        </div>
+                    </li>
+
+                    <li class="experience-list-item">
+                        <div class="col-md-7">
+
+                            <div class="panel panel-success experience-panel">
+                                <div class="panel-heading"><i class="fa fa-smile-o panel-icon"></i>Poll Cat</div>
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, tenetur?</li>
+                                        <li>Ad asperiores ea in ipsam laboriosam necessitatibus nesciunt, omnis tenetur!
+                                        </li>
+                                        <li>Architecto aut dolorum explicabo id itaque odio sed suscipit, vel.</li>
+                                        <li>Adipisci fugit necessitatibus neque provident quis, repellat. Alias, esse,
+                                            fuga!
+                                        </li>
+                                        <li>A ab blanditiis dolores doloribus labore minus reiciendis totam veniam!</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-5">
+                            <img style="max-width:100%; max-height:100%;" src="img/sample-screenshot.png"/>
+                        </div>
+                    </li>
+
+                    <li class="experience-list-item">
+                        <div class="col-md-7">
+
+                            <div class="panel panel-warning experience-panel">
+                                <div class="panel-heading"><i class="fa fa-microphone panel-icon"></i>Web Unleashed</div>
+                                <div class="panel-body">
+                                    <ul>
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, tenetur?</li>
+                                        <li>Ad asperiores ea in ipsam laboriosam necessitatibus nesciunt, omnis tenetur!
+                                        </li>
+                                        <li>Architecto aut dolorum explicabo id itaque odio sed suscipit, vel.</li>
+                                        <li>Adipisci fugit necessitatibus neque provident quis, repellat. Alias, esse,
+                                            fuga!
+                                        </li>
+                                        <li>A ab blanditiis dolores doloribus labore minus reiciendis totam veniam!</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-5">
+                            <img style="max-width:100%; max-height:100%;" src="img/sample-screenshot.png"/>
+                        </div>
+                    </li>
+                </ul>
+
             </div>
         </div>
+
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-
-            <ul class="experience-list">
-                <li ng-repeat="experience in ctrl.config.experiences" class="experience-list-item">
-                    <div class="col-md-7">
-
-                        <div class="panel panel-info experience-panel">
-                            <div class="panel-heading"><i class="fa fa-briefcase panel-icon"></i>OTPP</div>
-                            <div class="panel-body">
-                                <ul>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, tenetur?</li>
-                                    <li>Ad asperiores ea in ipsam laboriosam necessitatibus nesciunt, omnis tenetur!
-                                    </li>
-                                    <li>Architecto aut dolorum explicabo id itaque odio sed suscipit, vel.</li>
-                                    <li>Adipisci fugit necessitatibus neque provident quis, repellat. Alias, esse,
-                                        fuga!
-                                    </li>
-                                    <li>A ab blanditiis dolores doloribus labore minus reiciendis totam veniam!</li>
-
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-5">
-                        <carousel class="experience-carousel">
-                            <slide ng-repeat="image in experience.media">
-                                <img class="experience-image" ng-src="{{image.url}}"/>
-                            </slide>
-                        </carousel>
-                    </div>
-                </li>
-
-                <li class="experience-list-item">
-                    <div class="col-md-7">
-
-                        <div class="panel panel-success experience-panel">
-                            <div class="panel-heading"><i class="fa fa-smile-o panel-icon"></i>Poll Cat</div>
-                            <div class="panel-body">
-                                <ul>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, tenetur?</li>
-                                    <li>Ad asperiores ea in ipsam laboriosam necessitatibus nesciunt, omnis tenetur!
-                                    </li>
-                                    <li>Architecto aut dolorum explicabo id itaque odio sed suscipit, vel.</li>
-                                    <li>Adipisci fugit necessitatibus neque provident quis, repellat. Alias, esse,
-                                        fuga!
-                                    </li>
-                                    <li>A ab blanditiis dolores doloribus labore minus reiciendis totam veniam!</li>
-
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-5">
-                        <img style="max-width:100%; max-height:100%;" src="img/sample-screenshot.png"/>
-                    </div>
-                </li>
-
-                <li class="experience-list-item">
-                    <div class="col-md-7">
-
-                        <div class="panel panel-warning experience-panel">
-                            <div class="panel-heading"><i class="fa fa-microphone panel-icon"></i>Web Unleashed</div>
-                            <div class="panel-body">
-                                <ul>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, tenetur?</li>
-                                    <li>Ad asperiores ea in ipsam laboriosam necessitatibus nesciunt, omnis tenetur!
-                                    </li>
-                                    <li>Architecto aut dolorum explicabo id itaque odio sed suscipit, vel.</li>
-                                    <li>Adipisci fugit necessitatibus neque provident quis, repellat. Alias, esse,
-                                        fuga!
-                                    </li>
-                                    <li>A ab blanditiis dolores doloribus labore minus reiciendis totam veniam!</li>
-
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-5">
-                        <img style="max-width:100%; max-height:100%;" src="img/sample-screenshot.png"/>
-                    </div>
-                </li>
-            </ul>
-
-        </div>
-    </div>
 </div>
 </body>
 </html>

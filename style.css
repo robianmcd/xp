@@ -21,8 +21,19 @@ div.rob {
     margin-right: auto;
 }
 
-.top-panel {
-    min-height: 250px;
+@media (min-width: 1000px) {
+    .intro-panel {
+        min-height: 250px;
+    }
+}
+
+.intro-col {
+    margin-bottom: 25px;
+}
+
+.intro {
+    min-height: 100vh;
+    padding-top: 10vh;
 }
 
 .experience-list-item {
@@ -41,4 +52,8 @@ div.rob {
 .experience-image {
     max-height: 235px;
     margin: auto;
+}
+
+#experiences {
+    min-height: 100vh;
 }
