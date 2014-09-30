@@ -10,6 +10,8 @@
     <script src="config.js"></script>
     <script src="app.js"></script>
     <script src="services/anchorSmoothScrollService.js"></script>
+    <script src="components/carousel/carouselDirective.js"></script>
+    <script src="components/carousel/carouselModalCtrl.js"></script>
 
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +29,7 @@
         <div class="row">
 
             <div class="text-center col-md-4 col-md-push-4 intro-col">
-                <div class="rob"></div>
+                <div class="profile-img"></div>
                 <div>
                     <a href="mailto:robianmcd@gmail.com">robianmcd@gmail.com</a>
                 </div>
@@ -117,11 +119,7 @@
                         </div>
 
                         <div class="col-md-5">
-                            <carousel class="experience-carousel">
-                                <slide ng-repeat="image in experience.media">
-                                    <img class="experience-image" ng-src="{{image.url}}"/>
-                                </slide>
-                            </carousel>
+                            <xp-carousel media-list="experience.media" size="small" active-index="0"></xp-carousel>
                         </div>
                     </li>
 

@@ -7,7 +7,7 @@ i.panel-icon {
     padding-right: 6px;
 }
 
-div.rob {
+div.profile-img {
     background-image: url(img/Rob.png);
 
     background-position: 50% 50%;
@@ -45,15 +45,37 @@ div.rob {
 }
 
 .experience-carousel {
+
+}
+
+.experience-carousel-sm {
     height: 235px;
     margin-bottom: 25px;
 }
 
+.experience-carousel-lg {
+
+}
+
 .experience-image {
-    max-height: 235px;
     margin: auto;
+}
+
+.experience-image-sm {
+    max-height: 235px;
+
+}
+
+.experience-image-lg {
+
 }
 
 #experiences {
     min-height: 100vh;
+}
+
+@media (min-width: 1202px) {
+    .modal-lg {
+        width: 1200px;
+    }
 }

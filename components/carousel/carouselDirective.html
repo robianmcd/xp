@@ -1,0 +1,11 @@
+<div>
+    <carousel class="experience-carousel"
+              ng-class="{'experience-carousel-sm': ctrl.size === 'small', 'experience-carousel-lg': ctrl.size === 'large'}">
+        <slide ng-repeat="image in ctrl.mediaList" active="image.active">
+            <img class="experience-image"
+                 ng-class="{'experience-image-sm': ctrl.size === 'small', 'experience-image-lg': ctrl.size === 'large'}"
+                 ng-src="{{image.url}}"
+                 ng-click="ctrl.onImgClick($index)"/>
+        </slide>
+    </carousel>
+</div>
