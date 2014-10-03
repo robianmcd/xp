@@ -39,7 +39,8 @@
 
                 </div>
                 <div>
-                    <a href="http://stackoverflow.com/users/373655/rob" class="fa fa-stack-overflow fa-lg" target="_blank"></a>
+                    <a href="http://stackoverflow.com/users/373655/rob" class="fa fa-stack-overflow fa-lg"
+                       target="_blank"></a>
                     <a href="https://github.com/robianmcd" class="fa fa-github fa-lg" target="_blank"></a>
                     <a href="https://twitter.com/RobIanMcd" class="fa fa-twitter fa-lg" target="_blank"></a>
                 </div>
@@ -76,7 +77,8 @@
     </div>
 
     <div class="text-center visible-lg visible-md">
-        <a ng-click="ctrl.scrollToId('experiences')" style="position:relative; top:-70px;" href="" class="btn btn-primary btn-lg">
+        <a ng-click="ctrl.scrollToId('experiences')" style="position:relative; top:-70px;" href=""
+           class="btn btn-primary btn-lg">
             <i class="fa fa-chevron-down fa-2x"></i>
         </a>
     </div>
@@ -116,23 +118,50 @@
             <div class="col-md-12">
 
                 <ul class="experience-list">
-                    <li ng-repeat="experience in ctrl.config.experiences" class="experience-list-item">
+                    <li ng-repeat="experience in ctrl.data.experiences" class="experience-list-item">
                         <div class="col-md-7">
 
-                            <div class="panel panel-info experience-panel">
-                                <div class="panel-heading"><i class="fa fa-briefcase panel-icon"></i>OTPP</div>
+                            <div class="panel experience-panel"
+                                 ng-class="{
+                               'panel-info': experience.type === 'professional',
+                               'panel-success': experience.type === 'sideProject',
+                               'panel-warning': experience.type === 'publicSpeaking'}">
+
+                                <div class="panel-heading">
+                                    <i class="fa fa-briefcase panel-icon"
+                                       ng-class="{
+                                       'fa-briefcase': experience.type === 'professional',
+                                       'fa-smile-o': experience.type === 'sideProject',
+                                       'fa-microphone': experience.type === 'publicSpeaking'}">
+                                    </i>
+                                    {{experience.name}}
+                                    <span class="pull-right">
+                                        {{experience.startDate | date:'MMM, yyyy'}} - {{experience.endDate | date:'MMM, yyyy'}}
+                                    </span>
+                                </div>
                                 <div class="panel-body">
                                     <ul>
-                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, tenetur?</li>
-                                        <li>Ad asperiores ea in ipsam laboriosam necessitatibus nesciunt, omnis tenetur!
-                                        </li>
-                                        <li>Architecto aut dolorum explicabo id itaque odio sed suscipit, vel.</li>
-                                        <li>Adipisci fugit necessitatibus neque provident quis, repellat. Alias, esse,
-                                            fuga!
-                                        </li>
-                                        <li>A ab blanditiis dolores doloribus labore minus reiciendis totam veniam!</li>
-
+                                        <li ng-repeat="point in experience.points">{{point}}</li>
                                     </ul>
+                                    <div>
+                                        Tags:
+                                    <span ng-show="!experience.showAllTags">
+                                        <span ng-repeat="tag in experience.featuredTags">
+                                            <button tooltip="{{ctrl.data.tagDefs[tag].info}}"
+                                                    class="btn btn-default btn-xs">{{tag}}
+                                            </button>
+                                        </span>
+                                        <a href="" ng-click="experience.showAllTags = true" ng-show="experience.tags">more...</a>
+                                    </span>
+                                    <span ng-show="experience.showAllTags" class="btn-group">
+                                        <span ng-repeat="tag in experience.tags">
+                                            <button tooltip="{{ctrl.data.tagDefs[tag].info}}"
+                                                    class="btn btn-default btn-xs">{{tag}}
+                                            </button>
+                                        </span>
+                                        <a href="" ng-click="experience.showAllTags = false" class="fa fa-compress"></a>
+                                    </span>
+                                    </div>
                                 </div>
                             </div>
 
@@ -143,59 +172,6 @@
                         </div>
                     </li>
 
-                    <li class="experience-list-item">
-                        <div class="col-md-7">
-
-                            <div class="panel panel-success experience-panel">
-                                <div class="panel-heading"><i class="fa fa-smile-o panel-icon"></i>Poll Cat</div>
-                                <div class="panel-body">
-                                    <ul>
-                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, tenetur?</li>
-                                        <li>Ad asperiores ea in ipsam laboriosam necessitatibus nesciunt, omnis tenetur!
-                                        </li>
-                                        <li>Architecto aut dolorum explicabo id itaque odio sed suscipit, vel.</li>
-                                        <li>Adipisci fugit necessitatibus neque provident quis, repellat. Alias, esse,
-                                            fuga!
-                                        </li>
-                                        <li>A ab blanditiis dolores doloribus labore minus reiciendis totam veniam!</li>
-
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-5">
-                            <img style="max-width:100%; max-height:100%;" src="img/sample-screenshot.png"/>
-                        </div>
-                    </li>
-
-                    <li class="experience-list-item">
-                        <div class="col-md-7">
-
-                            <div class="panel panel-warning experience-panel">
-                                <div class="panel-heading"><i class="fa fa-microphone panel-icon"></i>Web Unleashed</div>
-                                <div class="panel-body">
-                                    <ul>
-                                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, tenetur?</li>
-                                        <li>Ad asperiores ea in ipsam laboriosam necessitatibus nesciunt, omnis tenetur!
-                                        </li>
-                                        <li>Architecto aut dolorum explicabo id itaque odio sed suscipit, vel.</li>
-                                        <li>Adipisci fugit necessitatibus neque provident quis, repellat. Alias, esse,
-                                            fuga!
-                                        </li>
-                                        <li>A ab blanditiis dolores doloribus labore minus reiciendis totam veniam!</li>
-
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-5">
-                            <img style="max-width:100%; max-height:100%;" src="img/sample-screenshot.png"/>
-                        </div>
-                    </li>
                 </ul>
 
             </div>
