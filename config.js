@@ -7,19 +7,11 @@ var config = {
             media: [
                 {
                     type: 'img',
-                    url: 'img/sample-screenshot.png'
+                    url: 'img/otpp/otpp-home.png'
                 },
                 {
                     type: 'img',
-                    url: 'img/sample-screenshot2.png'
-                },
-                {
-                    type: 'img',
-                    url: 'img/tweets.png'
-                },
-                {
-                    type: 'img',
-                    url: 'img/Speakers.png'
+                    url: 'img/otpp/ldap-pe.png'
                 }
             ],
             points: [
@@ -31,7 +23,7 @@ var config = {
             ],
             tags: [
                 'Java', 'JavaScript', 'HTML', 'CSS', 'SASS',
-                'AngularJs', 'Wicket', 'Spring', 'Jasmine', 'Grunt', 'Maven', 'Karma',
+                'AngularJs', 'Wicket', 'Spring', 'Struts', 'Jasmine', 'Grunt', 'Maven', 'Karma',
                 'Jira', 'Confluence', 'Bamboo', 'Stackato', 'Dokku', 'IntelliJ', 'WebStorm', 'Eclipse'
             ],
             featuredTags: ['Java', 'JavaScript', 'AngularJs']
@@ -44,15 +36,15 @@ var config = {
             media: [
                 {
                     type: 'img',
-                    url: 'img/sample-screenshot2.png'
+                    url: 'img/cast/wireframe.jpg'
                 },
                 {
                     type: 'img',
-                    url: 'img/tweets.png'
+                    url: 'img/cast/rendered-venue.jpg'
                 },
                 {
                     type: 'img',
-                    url: 'img/Speakers.png'
+                    url: 'img/cast/ipad-app.jpg'
                 }
             ],
             points: [
@@ -63,8 +55,8 @@ var config = {
             ],
             tags: [
                 'C++', 'C',
-                'winforms',
-                'VisualStudio'
+                'WinForms',
+                'VisualStudio', 'DMX', 'Jira'
             ],
             featuredTags: [
                 'C++', 'C', 'VisualStudio'
@@ -121,16 +113,28 @@ var config = {
             type: 'framework',
             info: 'The Apache Struts web framework is a free open-source solution for creating Java web applications. This framework has reached End Of Life status as of 2013-04-05.'
         },
+        Jasmine: {
+            type: 'framework',
+            info: 'Jasmine is a behavior-driven development (BDD) for testing JavaScript code. Jasmine has no external dependencies and does not require a DOM.'
+        },
+        Grunt: {
+            type: 'framework',
+            info: 'Grunt is a task-based command line build tool for JavaScript projects.'
+        },
+        Maven: {
+            type: 'framework',
+            info: 'Apache Maven is a software project management and comprehension tool. This tag is for questions that don\'t relate to a specific Maven version.'
+        },
+        Karma: {
+            type: 'framework',
+            info: 'The main goal for Karma is to bring a productive testing environment to developers. An environment, where they don\'t have to set up many things and rather just write the code and get an instant feedback. Because getting a quick feedback is what makes you productive and creative.'
+        },
         WinForms: {
             type: 'framework',
             info: 'WinForms is the informal term given to Windows Forms, one of the graphical application programming interface (API) included as a part of Microsoft .NET Framework. WinForms provides access to the native Microsoft Windows interface elements by wrapping the existing Windows API in managed code.'
         },
-
-
-        //Libraries
-
         Highcharts: {
-            type: 'library',
+            type: 'framework',
             info: 'Highcharts is a Javascript charting library that uses HTML, SVG, and VML. The editor offers both open source/nonprofit and commercial editions of the product.'
         },
 
@@ -140,12 +144,45 @@ var config = {
         VisualStudio: {
             type: 'other',
             info: 'Visual Studio is an integrated development environment (IDE) from Microsoft. It supports many different programming languages.'
+        },
+        Jira: {
+            type: 'other',
+            info: 'JIRA is an enterprise-class issue and project-tracking system.'
+        },
+        Confluence: {
+            type: 'other',
+            info: 'Confluence is an enterprise-class collaboration and wiki system.'
+        },
+        Bamboo: {
+            type: 'other',
+            info: 'Bamboo is a continuous integration and deployment server from Atlassian, the makers of JIRA, Confluence and Crowd.'
+        },
+        Stackato: {
+            type: 'other',
+            info: 'ActiveState Stackato is a commercially supported Platform-as-a-Service based on open source technologies.'
+        },
+        Dokku: {
+            type: 'other',
+            info: 'Docker powered mini-Heroku in around 100 lines of Bash.'
+        },
+        IntelliJ: {
+            type: 'other',
+            info: 'IntelliJ IDEA is an IDE by JetBrains. Originally created for Java, it currently supports a wide variety of languages, including JavaScript, Groovy, HTML, CSS, RSS, R, Haskell, PHP, Ruby, Python, Scala, Clojure, and Kotlin.'
+        },
+        WebStorm: {
+            type: 'other',
+            info: 'WebStorm is a commercial IDE built by JetBrains for editing JavaScript, HTML, and CSS. It is built on the IntelliJ IDEA platform.'
+        },
+        Eclipse: {
+            type: 'other',
+            info: 'Eclipse is an open source IDE with plugins available to support a large variety of languages.'
+        },
+        DMX: {
+            type: 'other',
+            info: 'DMX512 (Digital MultipleX) is a standard for digital communication networks that are commonly used to control stage lighting and effects.'
         }
 
         //AD, FireBase, Heroku, MongoDb, IntelliJ, DB, linux, windows, google analytics
-        //Tools, Services, DBsweb
-
-        //Languages, Library/Framework, Other
 
 
     }

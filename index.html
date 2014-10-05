@@ -5,17 +5,18 @@
     <title>Rob McDiarmid</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.3/angular.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.3/angular-animate.js"></script>
     <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.2.min.js"></script>
     <script src="config.js"></script>
     <script src="app.js"></script>
     <script src="services/anchorSmoothScrollService.js"></script>
     <script src="components/carousel/carouselDirective.js"></script>
     <script src="components/carousel/carouselModalCtrl.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ng-tags-input/2.1.1-1/ng-tags-input.min.js"></script>
 
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="ng-tags-input.css"/>
 </head>
 <body>
 
@@ -84,31 +85,37 @@
     </div>
 
     <div id="experiences">
-        <h1 style="padding-bottom:30px;padding-top:60px; font-size:40pt" class="text-center">Experiences</h1>
+        <h1 style="padding-bottom:30px; padding-top:60px; font-size:40pt;" class="text-center">Experiences</h1>
 
         <div style="padding-bottom:30px;" class="row">
             <div class="col-md-12">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                    <input type="text" class="form-control" placeholder="">
+                    <tags-input ng-model="ctrl.searchTags" add-on-space="true" add-from-autocomplete-only="true"
+                                min-length="1">
+                        <auto-complete source="ctrl.getMatchingTags($query)" min-length="1"></auto-complete>
+                    </tags-input>
                 </div>
             </div>
         </div>
 
         <div style="padding-bottom:30px;" class="row">
             <div class="col-md-12">
-                <div>
-                    <a href="" class="btn btn-info">
+                <div class="type-toggle-btns">
+                    <a href="" class="btn" ng-model="ctrl.showProfessional" btn-checkbox
+                       ng-class="{'btn-info': ctrl.showProfessional, 'btn-default': !ctrl.showProfessional}">
                         Professional
-                        <span class="badge">3</span>
+                        <span class="badge">{{ctrl.getNumProfessional()}}</span>
                     </a>
-                    <a href="" class="btn btn-success">
+                    <a href="" class="btn" ng-model="ctrl.showSideProjects" btn-checkbox
+                       ng-class="{'btn-success': ctrl.showSideProjects, 'btn-default': !ctrl.showSideProjects}">
                         Side Projects
-                        <span class="badge">6</span>
+                        <span class="badge">{{ctrl.getNumSideProjects()}}</span>
                     </a>
-                    <a href="" class="btn btn-warning">
+                    <a href="" class="btn" ng-model="ctrl.showPublicSpeaking" btn-checkbox
+                       ng-class="{'btn-warning': ctrl.showPublicSpeaking, 'btn-default': !ctrl.showPublicSpeaking}">
                         Public Speaking
-                        <span class="badge">3</span>
+                        <span class="badge">{{ctrl.getNumPublicSpeaking()}}</span>
                     </a>
                 </div>
             </div>
@@ -118,7 +125,8 @@
             <div class="col-md-12">
 
                 <ul class="experience-list">
-                    <li ng-repeat="experience in ctrl.data.experiences" class="experience-list-item">
+                    <li ng-repeat="experience in ctrl.data.experiences | filter:ctrl.boundFilterExperiences as filteredExperiences"
+                        class="experience-list-item">
                         <div class="col-md-7">
 
                             <div class="panel experience-panel"
@@ -144,23 +152,20 @@
                                         <li ng-repeat="point in experience.points">{{point}}</li>
                                     </ul>
                                     <div>
-                                        Tags:
-                                    <span ng-show="!experience.showAllTags">
-                                        <span ng-repeat="tag in experience.featuredTags">
-                                            <button tooltip="{{ctrl.data.tagDefs[tag].info}}"
-                                                    class="btn btn-default btn-xs">{{tag}}
-                                            </button>
-                                        </span>
-                                        <a href="" ng-click="experience.showAllTags = true" ng-show="experience.tags">more...</a>
-                                    </span>
-                                    <span ng-show="experience.showAllTags" class="btn-group">
-                                        <span ng-repeat="tag in experience.tags">
-                                            <button tooltip="{{ctrl.data.tagDefs[tag].info}}"
-                                                    class="btn btn-default btn-xs">{{tag}}
-                                            </button>
-                                        </span>
-                                        <a href="" ng-click="experience.showAllTags = false" class="fa fa-compress"></a>
-                                    </span>
+
+                                        <div style="margin-right:18px">
+                                            Tags:
+                                            <span ng-repeat="tag in ctrl.getVisibleTagList(experience)">
+                                                <button tooltip="{{ctrl.data.tagDefs[tag].info}}"
+                                                        class="btn btn-default btn-xs"
+                                                        ng-click="ctrl.searchTags=[{text: tag}]">
+
+                                                    {{tag}}
+                                                </button>
+                                            </span>
+                                            <a href="" ng-show="experience.showAllTags" ng-click="experience.showAllTags = false" class="fa fa-compress"></a>
+                                            <a href="" ng-show="!experience.showAllTags" ng-click="experience.showAllTags = true">more...</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
