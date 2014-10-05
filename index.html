@@ -125,7 +125,7 @@
             <div class="col-md-12">
 
                 <ul class="experience-list">
-                    <li ng-repeat="experience in ctrl.data.experiences | filter:ctrl.boundFilterExperiences as filteredExperiences"
+                    <li ng-repeat="experience in ctrl.data.experiences | orderBy:'endDate':true | filter:ctrl.boundFilterExperiences as filteredExperiences"
                         class="experience-list-item">
                         <div class="col-md-7">
 
@@ -153,7 +153,7 @@
                                     </ul>
                                     <div>
 
-                                        <div style="margin-right:18px">
+                                        <div style="margin-right:20px">
                                             Tags:
                                             <span ng-repeat="tag in ctrl.getVisibleTagList(experience)">
                                                 <button tooltip="{{ctrl.data.tagDefs[tag].info}}"
@@ -173,7 +173,7 @@
                         </div>
 
                         <div class="col-md-5">
-                            <xp-carousel media-list="experience.media" size="small" active-index="0"></xp-carousel>
+                            <xp-carousel media-list="experience.media" size="small" active-index="0" ng-if="experience.media && experience.media.length"></xp-carousel>
                         </div>
                     </li>
 

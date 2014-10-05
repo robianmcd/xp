@@ -46,6 +46,12 @@ tags-input .autocomplete {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
+tags-input .tags .tag-item .remove-button {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
 tags-input .autocomplete .suggestion-list {
     margin: 0;
     padding: 0;

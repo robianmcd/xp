@@ -24,7 +24,7 @@ var config = {
             tags: [
                 'Java', 'JavaScript', 'HTML', 'CSS', 'SASS',
                 'AngularJs', 'Wicket', 'Spring', 'Struts', 'Jasmine', 'Grunt', 'Maven', 'Karma',
-                'Jira', 'Confluence', 'Bamboo', 'Stackato', 'Dokku', 'IntelliJ', 'WebStorm', 'Eclipse'
+                'Jira', 'Confluence', 'Bamboo', 'Stackato', 'Dokku', 'IntelliJ', 'WebStorm', 'Eclipse', 'npm', 'git'
             ],
             featuredTags: ['Java', 'JavaScript', 'AngularJs']
         },
@@ -36,11 +36,11 @@ var config = {
             media: [
                 {
                     type: 'img',
-                    url: 'img/cast/wireframe.jpg'
+                    url: 'img/cast/camera-path.jpg'
                 },
                 {
                     type: 'img',
-                    url: 'img/cast/rendered-venue.jpg'
+                    url: 'img/cast/design.jpg'
                 },
                 {
                     type: 'img',
@@ -60,6 +60,57 @@ var config = {
             ],
             featuredTags: [
                 'C++', 'C', 'VisualStudio'
+            ]
+        },
+        {
+            type: 'professional',
+            name: 'Blu',
+            startDate: "Jul, 2009",
+            endDate: "Sep, 2009",
+            media: [
+
+            ],
+            points: [
+                'Designed aspects of the project’s architecture',
+                'Demonstrated strong initiative in an unsupervised environment',
+                'Implemented Naive Bayes classifier for identifying whether a webpage is a blog'
+            ],
+            tags: [
+                'Java',
+                'Lucene', 'Solr', 'Nutch', 'MALLET',
+                'Eclipse'
+            ],
+            featuredTags: [
+                'Java', 'Lucene', 'Eclipse'
+            ]
+        },
+        {
+            type: 'sideProject',
+            name: 'Sonder.io',
+            startDate: "Mar, 2014",
+            media: [
+                {
+                    type: 'img',
+                    url: 'img/sonder/librato-dashboard.png'
+                },
+                {
+                    type: 'img',
+                    url: 'img/sonder/strider.png'
+                }
+            ],
+            points: [
+                'Developed an AngularJS app designed to be extensible and modular',
+                'Setup a build and deployment automation system that harnesses: StriderCD, npm, Bower, Gulp, Karma, Jasmine, RSync, SSH, Protractor, Librato, and Slack all at the touch of a button',
+                'Gained experience as a system administrator by provisioning continuous delivery and application servers',
+                'Efficiently coordinated work with a remote team spread out across North America'
+            ],
+            tags: [
+                'JavaScript', 'HTML', 'CSS',
+                'AngularJs', 'Node.js', 'Koa', 'Jasmine', 'Karma', 'Gulp', 'Protractor',
+                'WebStorm', 'npm', 'linux', 'Bower', 'collectd', 'Git'
+            ],
+            featuredTags: [
+                'JavaScript', 'AngularJs', 'Node.js'
             ]
         }
     ],
@@ -137,6 +188,38 @@ var config = {
             type: 'framework',
             info: 'Highcharts is a Javascript charting library that uses HTML, SVG, and VML. The editor offers both open source/nonprofit and commercial editions of the product.'
         },
+        Lucene: {
+            type: 'framework',
+            info: 'The term Lucene refers to the Java fulltext search engine library, but also to the entire eco-system that grew around it, including lucene.net, solr, elasticsearch and zend-search-lucene.'
+        },
+        Solr: {
+            type: 'framework',
+            info: 'Apache Solr is an open source search server based on the Lucene Java search library.'
+        },
+        Nutch: {
+            type: 'framework',
+            info: 'Nutch is open source web-search software. It builds on Lucene and Solr, adding web-specifics, such as a crawler, a link-graph database, parsers for HTML and other document formats, etc.'
+        },
+        MALLET: {
+            type: 'framework',
+            info: 'MALLET is a Java-based package for statistical natural language processing, document classification, clustering, topic modeling, information extraction, and other machine learning applications to text.'
+        },
+        'Node.js': {
+            type: 'framework',
+            info: 'Node.js is an event-based, asynchronous I/O framework that uses Google\'s V8 JavaScript engine.'
+        },
+        Koa: {
+            type: 'framework',
+            info: 'Koa is a web framework which aims to be a smaller, more expressive, and more robust foundation for web applications and APIs.'
+        },
+        Gulp: {
+            type: 'framework',
+            info: 'Gulp is a JavaScript build system, node.js-based task runner like Grunt. Gulp\'s uses streams and code-over-configuration for a simpler and more intuitive build process.'
+        },
+        Protractor: {
+            type: 'framework',
+            info: 'Protractor is an end to end test framework for Angular applications built on top of webdriverJS. Protractor can be run as a standalone binary runner, or included into your tests as a library.'
+        },
 
 
         //Other
@@ -180,6 +263,22 @@ var config = {
         DMX: {
             type: 'other',
             info: 'DMX512 (Digital MultipleX) is a standard for digital communication networks that are commonly used to control stage lighting and effects.'
+        },
+        Linux: {
+            type: 'other',
+            info: 'GNU/Linux, commonly shortened as Linux, is an open source operating system. Use this tag only if your question relates to using Linux APIs or Linux-specific behavior. Questions relating to using or troubleshooting Linux are off topic.'
+        },
+        Bower: {
+            type: 'other',
+            info: 'Bower is a package manager for the web. Bower lets you easily install assets such as images, CSS and JavaScript, and manages dependencies for you.'
+        },
+        collectd: {
+            type: 'other',
+            info: 'collectd is a daemon which collects system and application performance statistics periodically and provides mechanisms to query and store the values in a variety of ways, for example using RRD files.'
+        },
+        Git: {
+            type: 'other',
+            info: 'Git is an open-source distributed version control system (DVCS).'
         }
 
         //AD, FireBase, Heroku, MongoDb, IntelliJ, DB, linux, windows, google analytics
