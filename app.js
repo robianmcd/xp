@@ -16,7 +16,7 @@ function AppCtrl($scope, $q, config, anchorSmoothScroll) {
     this.showSideProjects = true;
     this.showPublicSpeaking = true;
 
-    this.filteredExperiences = [];
+    this.$scope.filteredExperiences = [];
 }
 
 app.controller('AppCtrl', AppCtrl);
@@ -28,14 +28,20 @@ AppCtrl.prototype.scrollToId = function (id) {
 AppCtrl.prototype.buildConfigData = function (config) {
     var data = angular.copy(config);
 
+    var today = new Date();
+
     data.experiences.forEach(function (experience) {
         if (experience.startDate) {
-            experience.startDate = new Date(experience.startDate);
+            //the month, year format for dates in the config file works fine in Chrome but not in
+            // Firefox so we need to add a day number.
+            var parsableStartDate = experience.startDate.replace(',', '1,');
+            experience.startDate = new Date(Date.parse(parsableStartDate));
 
             if (experience.endDate) {
-                experience.endDate = new Date(experience.endDate);
+                var parsableEndDate = experience.endDate.replace(',', '1,');
+                experience.endDate = new Date(Date.parse(parsableEndDate));
             } else {
-                experience.endDate = new Date();
+                experience.endDate = today;
             }
         }
     });
@@ -108,9 +114,14 @@ AppCtrl.prototype.getNumExperiencesOfType = function (type) {
 };
 
 AppCtrl.prototype.getVisibleTagList = function(experience) {
-    if (experience.showAllTags) {
+    if (!experience.featuredTags || experience.showAllTags) {
         return experience.tags;
     } else {
         return  experience.featuredTags;
     }
+};
+
+AppCtrl.prototype.onTagClick = function(tag) {
+    this.scrollToId('experiences');
+    this.searchTags=[{text: tag}];
 };

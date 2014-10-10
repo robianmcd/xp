@@ -3,6 +3,7 @@ var config = {
         {
             type: 'professional',
             name: 'Ontario Teachers\' Pension Plan',
+            link: 'http://www.otpp.com/',
             startDate: "Aug, 2012",
             media: [
                 {
@@ -23,24 +24,25 @@ var config = {
             ],
             tags: [
                 'Java', 'JavaScript', 'HTML', 'CSS', 'SASS',
-                'AngularJs', 'Wicket', 'Spring', 'Struts', 'Jasmine', 'Grunt', 'Maven', 'Karma',
-                'Jira', 'Confluence', 'Bamboo', 'Stackato', 'Dokku', 'IntelliJ', 'WebStorm', 'Eclipse', 'npm', 'git'
+                'AngularJs', 'Wicket', 'Spring', 'Struts', 'Jasmine', 'Grunt', 'Maven', 'Karma', 'Firebase',
+                'Jira', 'Confluence', 'Bamboo', 'Stackato', 'Dokku', 'IntelliJ', 'WebStorm', 'Eclipse', 'npm', 'git', 'AD'
             ],
             featuredTags: ['Java', 'JavaScript', 'AngularJs']
         },
         {
             type: 'professional',
             name: 'CAST Software',
+            link: 'http://www.cast-soft.com/',
             startDate: "May, 2010",
             endDate: "August, 2011",
             media: [
                 {
                     type: 'img',
-                    url: 'img/cast/camera-path.jpg'
+                    url: 'img/cast/design.jpg'
                 },
                 {
                     type: 'img',
-                    url: 'img/cast/design.jpg'
+                    url: 'img/cast/camera-path.jpg'
                 },
                 {
                     type: 'img',
@@ -67,9 +69,7 @@ var config = {
             name: 'Blu',
             startDate: "Jul, 2009",
             endDate: "Sep, 2009",
-            media: [
-
-            ],
+            media: [],
             points: [
                 'Designed aspects of the project’s architecture',
                 'Demonstrated strong initiative in an unsupervised environment',
@@ -87,8 +87,13 @@ var config = {
         {
             type: 'sideProject',
             name: 'Sonder.io',
+            link: 'http://beta.sonder.io',
             startDate: "Mar, 2014",
             media: [
+                {
+                    type: 'img',
+                    url: 'img/sonder/location-page.jpg'
+                },
                 {
                     type: 'img',
                     url: 'img/sonder/librato-dashboard.png'
@@ -107,11 +112,129 @@ var config = {
             tags: [
                 'JavaScript', 'HTML', 'CSS',
                 'AngularJs', 'Node.js', 'Koa', 'Jasmine', 'Karma', 'Gulp', 'Protractor',
-                'WebStorm', 'npm', 'linux', 'Bower', 'collectd', 'Git'
+                'WebStorm', 'npm', 'linux', 'Bower', 'collectd', 'Git', 'Digital-Ocean', 'AWS'
             ],
             featuredTags: [
                 'JavaScript', 'AngularJs', 'Node.js'
             ]
+        },
+        {
+            type: 'sideProject',
+            name: 'MIDI Shape Shifter',
+            link: 'https://code.google.com/p/midi-shape-shifter/',
+            startDate: "Mar, 2011",
+            endDate: "Jul, 2013",
+            media: [
+                {
+                    type: 'img',
+                    url: 'img/mss/mss.png'
+                },
+                {
+                    type: 'img',
+                    url: 'img/mss/release-1.png'
+                },
+                {
+                    type: 'img',
+                    url: 'img/mss/pong.png'
+                }
+            ],
+            points: [
+                'Contributed 10000+ lines of code',
+                'Enhanced my proficiency in C#',
+                'Designed back end architecture and front end GUI from the ground up',
+                'Integrated inversion of control framework to make unit testing more feasible'
+            ],
+            featuredFlags: ['C#', 'WinForms', 'VisualStudio'],
+            tags: [
+                'C#', 'XML',
+                'WinForms', 'NUnit',
+                'VisualStudio', 'MIDI', 'Google-Analytics'
+            ]
+        },
+        {
+            type: 'sideProject',
+            name: 'POSIT',
+            link: 'https://play.google.com/store/apps/details?id=org.hfoss.posit.android&hl=en',
+            startDate: 'Jan, 2012',
+            endDate: 'May, 2012',
+            points: [
+                'Gained experience working with a distributed version control system',
+                'Learned to develop with the Android API'
+            ],
+            tags: ['Java', 'Android', 'Eclipse']
+        },
+        {
+            type: 'sideProject',
+            name: 'Gnumeric',
+            link: 'http://www.gnumeric.org/',
+            startDate: 'Jan, 2010',
+            endDate: 'Apr, 2010',
+            points: [
+                'Improved leadership skills by collaborating with a team of 8 developers',
+                'Worked towards implementing pivot tables in Gnome’s Gnumeric',
+                'Designed algorithms and data structures to optimize performance'
+            ],
+            media: [
+                {
+                    type: 'img',
+                    url: 'img/gnumeric/gnumeric.png'
+                }
+            ],
+            tags: ['C', 'Eclipse', 'GObject']
+        },
+        {
+            type: 'publicSpeaking',
+            name: 'AngularJs Toronto',
+            link: 'http://www.meetup.com/AngularJS-Toronto/events/168934672/',
+            startDate: 'Mar, 2014',
+            endDate: 'Mar, 2014',
+            media: [
+                {
+                    type: 'img',
+                    url: 'img/angularjs-toronto/meetup-page.png'
+                }
+            ],
+            tags: ['JavaScript', 'AngularJs', 'Firebase']
+        },
+        {
+            type: 'publicSpeaking',
+            name: 'Spotlight AngularJs',
+            link: 'http://fitc.ca/event/angularjs/presentations/',
+            startDate: 'Jun, 2014',
+            endDate: 'Jun, 2014',
+            media: [
+                {
+                    type: 'img',
+                    url: 'img/spotlight-angularjs/bahen.jpg'
+                },
+                {
+                    type: 'img',
+                    url: 'img/spotlight-angularjs/presentations.png'
+                }
+            ],
+            tags: ['JavaScript', 'AngularJs', 'Firebase']
+        },
+        {
+            type: 'publicSpeaking',
+            name: 'Web Unleashed',
+            link: 'http://fitc.ca/event/webu14/',
+            startDate: 'Sep, 2014',
+            endDate: 'Sep, 2014',
+            media: [
+                {
+                    type: 'img',
+                    url: 'img/web-unleashed/speakers.png'
+                },
+                {
+                    type: 'img',
+                    url: 'img/web-unleashed/convention-centre.png'
+                },
+                {
+                    type: 'img',
+                    url: 'img/web-unleashed/tweets.png'
+                }
+            ],
+            tags: ['WebStorm', 'Cloud9', 'JavaScript', 'AngularJs']
         }
     ],
     tagDefs: {
@@ -144,7 +267,14 @@ var config = {
             type: 'language',
             info: 'C is a general-purpose computer programming language used for operating systems, libraries, games and other high performance work and is clearly distinct from C++. It was developed in 1972 by Dennis Ritchie for use with the Unix operating system.'
         },
-
+        'C#': {
+            type: 'language',
+            info: 'C# is a multi-paradigm programming language encompassing strong typing, imperative, declarative, functional, generic, object-oriented (class-based), and component-oriented programming disciplines.'
+        },
+        XML: {
+            type: 'language',
+            info: 'Extensible Markup Language (XML) is a flexible structured document format that defines human and machine-readable encoding rules.'
+        },
 
         //FRAMEWORKS
 
@@ -220,6 +350,18 @@ var config = {
             type: 'framework',
             info: 'Protractor is an end to end test framework for Angular applications built on top of webdriverJS. Protractor can be run as a standalone binary runner, or included into your tests as a library.'
         },
+        Firebase: {
+            type: 'framework',
+            info: 'Firebase is a real-time application platform, optimized for building collaborative, asynchronous applications with mostly client-side code.'
+        },
+        NUnit: {
+            type: 'framework',
+            info: 'NUnit is an open source unit testing framework for Microsoft .NET and Silverlight written in C#. It serves the same purpose as JUnit does in the Java world, and is one of many in the xUnit family.'
+        },
+        GObject: {
+            type: 'framework',
+            info: 'GObject(GLib Object System) provides a portable object system and transparent cross-language interoperability.'
+        },
 
 
         //Other
@@ -279,9 +421,34 @@ var config = {
         Git: {
             type: 'other',
             info: 'Git is an open-source distributed version control system (DVCS).'
+        },
+        AD: {
+            type: 'other',
+            info: 'Active Directory (AD) is a directory service created by Microsoft. It stores all information and settings for a deployment in a central database. AD allows administrators to assign policies, deploy and update software.'
+        },
+        MIDI: {
+            type: 'other',
+            info: 'MIDI (Musical Instrument Digital Interface) is a protocol used to allow music hardware, software and other equipment to communicate with each other.'
+        },
+        'Google-Analytics': {
+            type: 'other',
+            info: 'Google Analytics is a free web analytics solution provided by Google, featuring several client-side APIs, as well as REST APIs for data export and for management.'
+        },
+        Android: {
+            type: 'other',
+            info: 'Android is Google\'s OS for digital devices [Phone, Tablet, Auto, TV, Watch].'
+        },
+        'Digital-Ocean': {
+            type: 'other',
+            info: 'DigitalOcean is a cloud-hosting provider for deploying an SSD cloud server.'
+        },
+        AWS: {
+            type: 'other',
+            info: 'Amazon Web Services (AWS) is a collection of commercial services centered around virtualized, commodity and clustered computing, networking, database and storage, as well as supporting tools that are offered through infrastructure as a service.'
         }
 
-        //AD, FireBase, Heroku, MongoDb, IntelliJ, DB, linux, windows, google analytics
+
+        //Heroku, MongoDb, google analytics
 
 
     }

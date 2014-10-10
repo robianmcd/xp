@@ -136,16 +136,22 @@
                                'panel-warning': experience.type === 'publicSpeaking'}">
 
                                 <div class="panel-heading">
-                                    <i class="fa fa-briefcase panel-icon"
-                                       ng-class="{
+                                    <a ng-href="{{experience.link}}" target="_blank" class="xp-link">
+                                        <i class="fa fa-briefcase panel-icon"
+                                           ng-class="{
                                        'fa-briefcase': experience.type === 'professional',
                                        'fa-smile-o': experience.type === 'sideProject',
                                        'fa-microphone': experience.type === 'publicSpeaking'}">
-                                    </i>
-                                    {{experience.name}}
+                                        </i>
+                                        {{experience.name}}
+                                    </a>
                                     <span class="pull-right">
-                                        {{experience.startDate | date:'MMM, yyyy'}} - {{experience.endDate | date:'MMM, yyyy'}}
+                                        {{experience.startDate | date:'MMM, yyyy'}}
+                                        <span ng-show="experience.startDate.getTime() !== experience.endDate.getTime()">
+                                            - {{experience.endDate | date:'MMM, yyyy'}}
+                                        </span>
                                     </span>
+
                                 </div>
                                 <div class="panel-body">
                                     <ul>
@@ -158,13 +164,15 @@
                                             <span ng-repeat="tag in ctrl.getVisibleTagList(experience)">
                                                 <button tooltip="{{ctrl.data.tagDefs[tag].info}}"
                                                         class="btn btn-default btn-xs"
-                                                        ng-click="ctrl.searchTags=[{text: tag}]">
-
+                                                        ng-click="ctrl.onTagClick(tag)">
                                                     {{tag}}
                                                 </button>
                                             </span>
-                                            <a href="" ng-show="experience.showAllTags" ng-click="experience.showAllTags = false" class="fa fa-compress"></a>
-                                            <a href="" ng-show="!experience.showAllTags" ng-click="experience.showAllTags = true">more...</a>
+                                            <span ng-show="experience.featuredTags">
+                                                <a href="" ng-show="experience.showAllTags" ng-click="experience.showAllTags = false" class="fa fa-compress"></a>
+                                                <a href="" ng-show="!experience.showAllTags" ng-click="experience.showAllTags = true">more...</a>
+                                            </span>
+
                                         </div>
                                     </div>
                                 </div>
