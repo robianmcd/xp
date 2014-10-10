@@ -132,6 +132,10 @@ a.xp-link {
     font-weight: normal;
 }
 
+blockquote {
+    font-size: 15px;
+}
+
 .btn-info.active {
     background-color: #3498db;
     border-color: #3498db;

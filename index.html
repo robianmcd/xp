@@ -51,7 +51,7 @@
                 <div class="panel panel-primary intro-panel">
                     <div class="panel-heading"><i class="fa fa-child panel-icon"></i>Bio</div>
                     <div class="panel-body">
-                        Rob McDiarmid is a software developer with a love for all things Angular. He is an active member
+                        Rob McDiarmid is a software developer who loves finding simple solutions to complex problems. He is an active member
                         of
                         the JavaScript community and takes every chance he gets to speak at and participate in developer
                         events around Toronto. By day, Rob works for OTPP as a full-stack developer on an Angular/Java
@@ -65,10 +65,10 @@
                     <div class="panel-heading"><i class="fa fa-graduation-cap panel-icon"></i>Education</div>
                     <div class="panel-body">
                         <ul>
-                            <li>Completed the computer science specialist program</li>
+                            <li>Graduated from the computer science specialist program</li>
                             <li>Took part in the Undergraduate Capstone Open Source Projects program</li>
                             <li>Vice president of the U of T HFOSS club</li>
-                            <li>Participated in the PEY co-op program</li>
+                            <li>Completed a 16 month internship through the PEY co-op program</li>
                         </ul>
                     </div>
                 </div>
@@ -154,11 +154,16 @@
 
                                 </div>
                                 <div class="panel-body">
-                                    <ul>
+                                    <ul ng-show="experience.points">
                                         <li ng-repeat="point in experience.points">{{point}}</li>
                                     </ul>
+                                    <div ng-show="experience.overview">
+                                        <h4>Overview</h4>
+                                        <blockquote>
+                                            <p>{{experience.overview}}</p>
+                                        </blockquote>
+                                    </div>
                                     <div>
-
                                         <div style="margin-right:20px">
                                             Tags:
                                             <span ng-repeat="tag in ctrl.getVisibleTagList(experience)">
@@ -183,6 +188,7 @@
                         <div class="col-md-5">
                             <xp-carousel media-list="experience.media" size="small" active-index="0" ng-if="experience.media && experience.media.length"></xp-carousel>
                         </div>
+                        <hr/>
                     </li>
 
                 </ul>

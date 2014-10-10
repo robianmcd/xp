@@ -194,6 +194,7 @@ var config = {
                     url: 'img/angularjs-toronto/meetup-page.png'
                 }
             ],
+            overview: 'n this talk Rob will discuss building a simple app with Angular and Firebase and focus on how it integrates with Angular through AngularFire. Rob will also cover some of the main features of Firebase such as 3-way data binding, Simple Sign On and security.',
             tags: ['JavaScript', 'AngularJs', 'Firebase']
         },
         {
@@ -212,6 +213,7 @@ var config = {
                     url: 'img/spotlight-angularjs/presentations.png'
                 }
             ],
+            overview: 'Firebase is a backend solution designed to put all the power into your client side framework’s hands. It allows your client app to control many aspects of your site that would traditionally be done from the server. Firebase manages your entire backend and provides it to you as a service so you can focus on writing client side apps. It also makes it extremely easy to sync data in real time between your users and the server.',
             tags: ['JavaScript', 'AngularJs', 'Firebase']
         },
         {
@@ -234,6 +236,7 @@ var config = {
                     url: 'img/web-unleashed/tweets.png'
                 }
             ],
+            overview: 'In this session, Rob McDiarmid will give you a feel for what it is like to work on a JavaScript application in WebStorm (JetBrains’ JavaScript IDE). You’ll learn how you can simplify your JavaScript and give your IDE a bit more to work with using TypeScript. Rob will also take a look at what the future of collaboration in the cloud might look like with Cloud 9.',
             tags: ['WebStorm', 'Cloud9', 'JavaScript', 'AngularJs']
         }
     ],
@@ -446,10 +449,5 @@ var config = {
             type: 'other',
             info: 'Amazon Web Services (AWS) is a collection of commercial services centered around virtualized, commodity and clustered computing, networking, database and storage, as well as supporting tools that are offered through infrastructure as a service.'
         }
-
-
-        //Heroku, MongoDb, google analytics
-
-
     }
 };
